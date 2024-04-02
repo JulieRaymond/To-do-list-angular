@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Task } from '../models/task.model';
+import { Component, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TaskSearchComponent {
 
-  @Output() searchTermChangeEmit: EventEmitter<string> = new EventEmitter();
+  Output searchTermChangeEmit: EventEmitter<string> = new EventEmitter();
 
   onSearchTermChange(event: Event): void {
     this.searchTermChangeEmit.emit((event.target as HTMLInputElement).value);

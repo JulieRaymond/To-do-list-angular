@@ -1,23 +1,20 @@
-import { Component, EventEmitter, HostListener, Output, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Component, EventEmitter } from '@angular/core';
 import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-create-task',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [],
   templateUrl: './create-task.component.html',
   styleUrl: './create-task.component.css'
 })
 export class CreateTaskComponent {
 
-  @Output() newTaskEmit: EventEmitter<Task> = new EventEmitter();
-
-  formBuilder: FormBuilder = inject(FormBuilder);
+  Output newTaskEmit: EventEmitter<Task> = new EventEmitter();
 
   taskForm = this.formBuilder.group({
-    content: '',
-    done: false
+    content: ['', Validators.required],
+    done: [false]
   });
 
   sendTaskToApp() {
