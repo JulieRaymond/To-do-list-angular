@@ -1,3 +1,5 @@
+@import "./app/app.component.css";
+
 form {
   margin: 20px;
   padding: 20px;

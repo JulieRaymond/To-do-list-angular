@@ -1,0 +1,34 @@
+.btn-filter {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-all-tasks {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-completed-tasks {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-incomplete-tasks {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-filter:hover {
+  background-color: #0056b3;
+}
+
+.btn-completed-tasks:hover {
+  background-color: #218838; /* Couleur légèrement différente au survol pour les tâches terminées */
+}
+
+.btn-incomplete-tasks:hover {
+  background-color: #c82333; /* Couleur légèrement différente au survol pour les tâches incomplètes */
+}

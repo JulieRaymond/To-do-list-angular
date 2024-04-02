@@ -1,6 +1,12 @@
 <h1>To Do List</h1>
+
+<div class="task-filters">
+  <button class="btn-filter btn-all-tasks" (click)="filterTasks('all')">Toutes</button>
+  <button class="btn-filter btn-completed-tasks" (click)="filterTasks('completed')">Terminées</button>
+  <button class="btn-filter btn-incomplete-tasks" (click)="filterTasks('incomplete')">En cours</button>
+</div>
+
 <app-task-search
-  (searchTermChange)="searchedTaskReceive()"
-></app-task-search>
-<app-task-list filteredTaskList="filteredTaskList"></app-task-list>
-<app-create-task (newTask)="newTaskReceive()"></app-create-task>
+  (searchTermChange)="searchedTaskReceive($event)"></app-task-search>
+<app-task-list [filteredTaskList]="filteredTaskList"></app-task-list> <!-- Utilisation de la syntaxe de liaison de données [] -->
+<app-create-task (newTask)="newTaskReceive($event)"></app-create-task> <!-- Ajout de $event pour passer la nouvelle tâche -->
