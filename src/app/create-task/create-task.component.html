@@ -1,0 +1,5 @@
+<form [formGroup]="taskForm" (ngSubmit)="sendTaskToApp()">
+  <label for="content">Nouvelle Tâche</label>
+  <input type="text" id="content" formControlName="content">
+  <button>Ajouter</button>
+</form>
