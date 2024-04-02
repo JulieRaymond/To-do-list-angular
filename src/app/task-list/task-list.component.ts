@@ -16,13 +16,10 @@ import {NgForOf, NgIf} from "@angular/common"; //ajout modèle
 export class TaskListComponent {
 
   @Input() filteredTaskList!: Task[];
-  @Output() taskMouseEnter: EventEmitter<Task> = new EventEmitter();
-  @Output() taskMouseLeave: EventEmitter<Task> = new EventEmitter();
-  @Output() taskToggleDone: EventEmitter<Task> = new EventEmitter();
 
   message: string = '';
 
-  onMouseEnter(task: Task) { //correction TACHE = TASK
+  onMouseEnter(task: Task) {
     task.showMessage = true;
   }
 
@@ -34,7 +31,7 @@ export class TaskListComponent {
     task.done = !task.done;
   }
 
-  deleteTask(index: number) { // Changement de type de index de string à number
+  deleteTask(index: number) {
     this.filteredTaskList.splice(index, 1);
   }
 }
