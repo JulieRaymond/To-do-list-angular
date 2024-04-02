@@ -15,8 +15,6 @@ export class TaskListComponent {
 
   message: string = '';
 
-  showScrollMessage = false;
-
   onMouseEnter(task: Task) {
     task.showMessage = true; // Affiche le message pour la tâche survolée
   }
@@ -31,15 +29,6 @@ export class TaskListComponent {
 
   deleteTask(index: number) {
     this.filteredTaskList.splice(index, 1);
-  }
-
-  onScroll(event: Event) {
-    const target = event.target as HTMLElement;
-    if (target.scrollTop > 100 && !this.showScrollMessage) {
-      this.showScrollMessage = true;
-    } else if (target.scrollTop <= 100 && this.showScrollMessage) {
-      this.showScrollMessage = false; // Optionnel, masque le message si l'utilisateur remonte
-    }
   }
 
 }

@@ -1,4 +1,4 @@
-<ul class="tasks-container" (scroll)="onScroll($event)">
+<ul class="tasks-container">
   <li
     *ngFor="let task of filteredTaskList; let i = index"
     (mouseenter)="onMouseEnter(task)"
@@ -12,6 +12,3 @@
     </div>
   </li>
 </ul>
-<div *ngIf="showScrollMessage" class="scroll-message">
-  Tu as l'air d'avoir beaucoup de tâches en cours.
-</div>

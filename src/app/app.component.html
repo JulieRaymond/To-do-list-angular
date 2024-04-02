@@ -4,9 +4,3 @@
 ></app-task-search>
 <app-task-list [filteredTaskList]="filteredTaskList"></app-task-list>
 <app-create-task (newTaskEmit)="newTaskReceive($event)"></app-create-task>
-<button (click)="onClick()">Click</button>
-
-<app-cocktail-list></app-cocktail-list>
-
-<h2>Image du jour</h2>
-<img [src]="imgOfTheDay" alt="apod" />
