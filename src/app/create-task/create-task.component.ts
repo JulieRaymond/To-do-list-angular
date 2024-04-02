@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Task } from '../models/task.model';
-import {FormBuilder, FormGroup, FormsModule, Validators} from '@angular/forms'; // Importation de FormBuilder et Validators
+import {FormBuilder, FormGroup, FormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create-task',
@@ -15,9 +15,9 @@ export class CreateTaskComponent {
 
   @Output() newTask: EventEmitter<Task> = new EventEmitter(); // Utilisation de l'annotation @Output
 
-  taskForm: FormGroup; // Déclaration de taskForm comme un FormGroup
+  taskForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { // Injection de FormBuilder dans le constructeur
+  constructor(private formBuilder: FormBuilder) {
     this.taskForm = this.formBuilder.group({
       content: ['', Validators.required],
       done: [false]
